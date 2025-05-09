@@ -15,7 +15,14 @@ jobs:
         with:
           java-version: "17"
           distribution: "adopt"
+          
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
 
+      - name: Install build-tools
+        run: |
+          yes | sdkmanager --install "build-tools;32.0.0"        
+        
       - name: Build Perseus APK
         run: ./patch_perseus.sh
 
