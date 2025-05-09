@@ -46,8 +46,8 @@ fi
 echo "Decompile Azur Lane apk"
 java -jar apktool.jar -q -f d com.bilibili.AzurLane.apk
 
-echo "Copy Perseus libs"
-cp -r Perseus/. com.bilibili.AzurLane/lib/
+echo "Copy JMBQ libs"
+cp -r azurlane/. com.bilibili.AzurLane/lib/
 
 echo "Patching Azur Lane with JMBQ"
 oncreate=$(grep -n -m 1 'onCreate' com.bilibili.AzurLane/smali_classes3/com/unity3d/player/UnityPlayerActivity.smali | sed  's/[0-9]*\:\(.*\)/\1/')
